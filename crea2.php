@@ -17,7 +17,7 @@ $importe='';
 $moneda='';
 $errores = [];
 
-if (isset($_POST)) {
+if ($_POST) {
   $textmensaje = trim($_POST['textmensaje']);
   $datein = trim($_POST['datein']);
   $dateout = trim($_POST['dateout']);
@@ -31,7 +31,7 @@ if (isset($_POST)) {
   $errores = validarviaje();
   if (empty($errores)) {
 
-      guardarViaje($_POST,$_FILES);
+    guardarViaje();
 
   }
 }

@@ -8,7 +8,7 @@ session_start();
 function validar($datosuser, $formulario, $imagenperfil = false, $mailModificacion = ''){
   $usuariologin = buscarUsuario(trim($datosuser['email']));
   $errores = [];
-  foreach ($datosuser as $clave => $dato) {
+  foreach ($datosuser as $clave => $dato){
     if (isset($datosuser[$clave])){
       if (trim($dato) == '') {
         if ($clave == 'password') {
@@ -342,20 +342,20 @@ function validarviaje(){
     if ($moneda == '') {
               $errores['moneda']  = 'Por favor indica que moneda presupuestas';
       }
-      return $errores;
     }
 
-   function guardarViaje($data){
+   function guardarViaje(){
       $viaje=[
-        'textmensaje' => $data['textmensaje'],
-        'datein' =>$data['datein'],
-        'dateout' =>$data['dateout'],
-        'pais' =>$data['pais'],
-        'actividades' =>$data['actividades'],
-        'ciudad' =>$data['ciudad'],
-        'mensajeiti' =>$data['mensajeiti'],
-        'importe' =>$data['importe'],
-        'moneda' =>$data['moneda'],
+        'textmensaje' => $_POST['textmensaje'],
+        'datein' =>$_POST['datein'],
+        'dateout' =>$_POST['dateout'],
+        'pais' =>$_POST['pais'],
+        'actividades' =>$_POST['actividades'],
+        'ciudad' =>$_POST['ciudad'],
+        'mensajeiti' =>$_POST['mensajeiti'],
+        'importe' =>$_POST['importe'],
+        'moneda' =>$_POST['moneda'],
+        'creadorDeViaje'=> $_SESSION['id'],
       ];
 
     $viajeJSON= json_encode($viaje);

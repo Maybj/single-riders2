@@ -15,10 +15,10 @@ if ($_POST) {
   $nombre = trim($_POST['nombre']);
   $apellido = trim($_POST['apellido']);
   $email = trim($_POST['email']);
-  $errores = validar($_POST,'registro',$_FILES);
+  $errores = validar($_POST,'registro');
   if (empty($errores)) {
 
-      registrar($_POST,$_FILES);
+      registrar($_POST);
 
   }
 }
