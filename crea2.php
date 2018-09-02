@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php
+
 require_once('funciones.php');
 if (isset($_SESSION['id']) || isset($_COOKIE['id'])) {
     header('location:muro.php');
@@ -46,19 +47,23 @@ if ($_POST) {
   </head>
   <body>
     <section class="container-fluid">
-      <section class="titulos">
+      <article class="encabezado">
         <div class="container-fluid">
           <div class="row">
             <div class= "col-12">
+              <div class="foto-titulo">
               <img src="images/crea/torre.png">
+            </div>
+            <div class="titulos">
                 <h1> CREA TU VIAJE<h1>
                 <h2> y compartilo en linea con otros viajeros</h2>
                 <h3 id="mensajes"></h3>
               </div>
             </div>
+          </div>
         </div>
-      </section>
-      <section class="cuerpo-pagina">
+      </article>
+      <article class="cuerpo-pagina">
       <div class="formulario-viaje">
         <div class="container">
           <div class="row">
@@ -202,7 +207,7 @@ if ($_POST) {
                   </div>
                 </div>
               </div>
-            </section>
+            </article>
               </section>
             </body>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -320,7 +320,7 @@ function validarviaje($data){
     $importe= trim($data['importe']);
     $moneda= trim($data['moneda']);
     $errores = [];
-    }
+
     if ($textmensaje == '') {
             $errores['textmensaje']  = 'Por favor compelta el nomre de tu viaje';
         }
@@ -342,6 +342,7 @@ function validarviaje($data){
     if ($moneda == '') {
               $errores['moneda']  = 'Por favor indica que moneda presupuestas';
       }
+    }
 
    function guardarViaje($data,$archivo){
       $ext = strtolower(pathinfo($_FILES[$archivo]['viaje'],PATHINFO_EXTENSION));
@@ -380,9 +381,7 @@ function validarviaje($data){
     $arrayPaises= explode(PHP_EOL,$allPaises);
     array_pop ($arrayPaises);
     $arrayPaisesPHP=[];
-    foreach ($arrayPaises as $key => $value) {
-      // code...
-    }
+    return $arrayPaisesPHP;
   }
 
   function traerCiudades(){

@@ -4,34 +4,41 @@
 .container-fluid{
   padding: 0;
 }
-.titulos{
+.encabezado{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.titulos h1{
+.foto-titulo{
   display: flex;
-  flex-direction: column;
+}
+.titulos{
+  display: flex;
+}
+.encabezado h1{
+  display: flex;
   color: white;
   font-family: 'Alegreya', serif;
   text-align: center;
   padding: 0;
 }
-.titulos h2{
+.encabezado h2{
   display: flex;
   color: white;
   text-align: center;
   padding:0;
   font-family: 'Alegreya', serif;
 }
-.titulos h3{
+.encabezado h3{
   display: flex;
   color: black;
   text-align: center;
   padding:0;
   font-family: 'Alegreya', serif;
 }
-.titulos img{
+.encabezado img{
+  display: flex;
+  flex-direction: column;
   max-width: 100%;
   height: auto;
 }
