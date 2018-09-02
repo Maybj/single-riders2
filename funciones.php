@@ -363,22 +363,36 @@ function validarviaje($data){
   }
 
   function traerViajes(){
-      $AllViajes = file_get_contents('viajes.json');
-      $arrayDeViajes = explode(PHP_EOL, $AllViajes);
+      $allViajes = file_get_contents('viajes.json');
+      $arrayDeViajes = explode(PHP_EOL, $allViajes);
       array_pop($arrayDeViajes);
-      $arrayPHP = [];
-      foreach ($arrayDeViajes as $key => $unViajeJSON) {
-          $arrayPHP[] = json_decode($unViajeJSON, true);
+      $arrayDeViajesPHP = [];
+      foreach ($arrayDeViajes as $key => $value) {
+          $arrayPHP[] = json_decode($ViajeJSON, true);
       }
       return $arrayPHP;
   }
 
 //nose como hacer para recorrer el ARRAY de arriba y que lo devuelva en el select //
 
+  function traerPaises(){
+    $allPaises= file_get_contents('paises.json');
+    $arrayPaises= explode(PHP_EOL,$allPaises);
+    array_pop ($arrayPaises);
+    $arrayPaisesPHP=[];
+    foreach ($arrayPaises as $key => $value) {
+      // code...
+    }
+  }
 
   function traerCiudades(){
-    $ArrayCiudades= file_get_contents('ciudades.json');
-    
+    $allCiudades= file_get_contents('ciudades.json');
+    $arrayCiudades= explode (PHP_EOL,$allCiudades);
+    array_pop($arrarCiudades);
+    $arrayCiudadesPHP=[];
+    foreach ($arrayCiudades as $key => $value) {
+      // code...
+    }
   }
 
  ?>

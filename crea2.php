@@ -58,8 +58,8 @@ if ($_POST) {
             </div>
         </div>
       </section>
-      <div class="cuerpo-pagina">
-      <section class="formulario-viaje">
+      <section class="cuerpo-pagina">
+      <div class="formulario-viaje">
         <div class="container">
           <div class="row">
             <div class="col-8">
@@ -173,10 +173,10 @@ if ($_POST) {
                                 <span class="input-group-text">Moneda</span>
                                 </div>
                                 <input type="text" class="form-control" name="moneda" aria-label="Amount (to the nearest dollar)">
+                                <input type="submit" class="btn btn-primary" value="Guarda Tu Viaje">
                               </div>
                             </div>
                           </div>
-                          <input type="submit" class="btn btn-primary" value="Guarda Tu Viaje">
                         </div>
                       </div>
                     </div>
@@ -184,7 +184,7 @@ if ($_POST) {
                 </div>
                 </div>
               </div>
-              </section>
+            </div>
               <div class="info-destinos">
                 <div class="container-fluid">
                   <div class="row">
@@ -202,7 +202,7 @@ if ($_POST) {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
               </section>
             </body>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
