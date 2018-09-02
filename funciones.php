@@ -311,14 +311,14 @@ function traerNombreDeUsuarios(){
 
 //Funcion guardar viaje del formulario crea tu viaje//
 //cuando vincule funciones a crea2.php , complete el formulario y puse enviar, me dio error de validacion //
-function validarviaje($data){
-    $textmensaje = trim($data['textmensaje']);
-    $datein = trim($data['datein']);
-    $dateout = trim($data['dateout']);
-    $pais=    trim($data['pais']);
-    $ciudad=  trim($data['ciudad']);
-    $importe= trim($data['importe']);
-    $moneda= trim($data['moneda']);
+function validarviaje(){
+    $textmensaje = trim($_POST['textmensaje']);
+    $datein = trim($_POST['datein']);
+    $dateout = trim($_POST['dateout']);
+    $pais=    trim($_POST['pais']);
+    $ciudad=  trim($_POST['ciudad']);
+    $importe= trim($_POST['importe']);
+    $moneda= trim($_POST['moneda']);
     $errores = [];
 
     if ($textmensaje == '') {
@@ -344,18 +344,17 @@ function validarviaje($data){
       }
     }
 
-   function guardarViaje($data,$archivo){
-      $ext = strtolower(pathinfo($_FILES[$archivo]['viaje'],PATHINFO_EXTENSION));
+   function guardarViaje($data){
       $viaje=[
-        "textmensaje" -> $data['textmensaje'],
-        "datein" ->$data['datein'],
-        "dateout" ->$data['dateout'],
-        "pais" ->$data['pais'],
-        "actividades" ->$data['actividades'],
-        "ciudad" ->$data['ciudad'],
-        "mensajeiti" ->$data['mensajeiti'],
-        "importe" ->$data['importe'],
-        "moneda" ->$data['moneda'],
+        'textmensaje' => $data['textmensaje'],
+        'datein' =>$data['datein'],
+        'dateout' =>$data['dateout'],
+        'pais' =>$data['pais'],
+        'actividades' =>$data['actividades'],
+        'ciudad' =>$data['ciudad'],
+        'mensajeiti' =>$data['mensajeiti'],
+        'importe' =>$data['importe'],
+        'moneda' =>$data['moneda'],
       ];
 
     $viajeJSON= json_encode($viaje);

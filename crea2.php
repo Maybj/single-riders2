@@ -5,8 +5,8 @@
 <?php
 
 require_once('funciones.php');
-if (isset($_SESSION['id']) || isset($_COOKIE['id'])) {
-    header('location:muro.php');
+if (!isset($_SESSION['id']) || !isset($_COOKIE['id'])) {
+    header('location:login.php');
 }
 $textmensaje = '';
 $datein = '';
@@ -17,7 +17,7 @@ $importe='';
 $moneda='';
 $errores = [];
 
-if ($_POST) {
+if (isset($_POST)) {
   $textmensaje = trim($_POST['textmensaje']);
   $datein = trim($_POST['datein']);
   $dateout = trim($_POST['dateout']);
@@ -69,7 +69,7 @@ if ($_POST) {
           <div class="row">
             <div class="col-8">
               <div class="accordion" id="accordionExample">
-                <form action="post">
+                <form method="post">
             <div class="card-infoGeneral">
                     <div class="card-header" id="card-infoGeneral">
                       <h5 class="mb-0">
