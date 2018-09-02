@@ -25,7 +25,10 @@ if (isset($_POST)) {
   $ciudad = trim($_POST['ciudad']);
   $importe = trim($_POST['importe']);
   $moneda = trim($_POST['moneda']);
-  $errores = validarviaje($_POST,'registro',$_FILES);
+  $mensajeiti = trim($_POST['mensajeiti']);
+  $actividades = trim($_POST['actividades']);
+  $creadorDeViaje = $_SESSION['id'];
+  $errores = validarviaje();
   if (empty($errores)) {
 
       guardarViaje($_POST,$_FILES);
@@ -57,7 +60,7 @@ if (isset($_POST)) {
             <div class="titulos">
                 <h1> CREA TU VIAJE<h1>
                 <h2> y compartilo en linea con otros viajeros</h2>
-                <h3 id="mensajes"></h3>
+                <h3 name="textmensajes"></h3>
               </div>
             </div>
           </div>
@@ -81,10 +84,10 @@ if (isset($_POST)) {
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <div class="form-group">
-                          <input type="text" id="textmensaje" onkeyup="$('#mensajes').text($('#textmensaje').val());" class="form-control" name="mensaje" placeholder="Ponele un Titulo a tu viaje..."></textarea>
+                          <input type="text" name="textmensaje" onkeyup="$('#mensajes').text($('#textmensaje').val());" class="form-control"  placeholder="Ponele un Titulo a tu viaje..."></textarea>
                           <br></br>
-                          Check in: <input type="date" name="checkin">
-                          Check out: <input type="date" name="checkout">
+                          Check in: <input type="date" name="datein">
+                          Check out: <input type="date" name="dateout">
                           <br></br>
                           <br></br>
                           <label for="inlineRadioOptions"> ¿Tus Fechas son flexibles?</label>
@@ -115,12 +118,12 @@ if (isset($_POST)) {
                       </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                           <div class="card-body">
-                            <label for="país">Elegí tu destino</label>
-                            <select class="form-control" name="país">
+                            <label for="pais">Elegí tu destino</label>
+                            <select class="form-control" name="pais">
                               <option value="">Selecciona el país a visitar</option>
                             </select>
                             <label for="actividades">¿Que tipo de viaje queres hacer?</label>
-                            <select class="custom-select" size="3">
+                            <select class="custom-select" size="3" name="actividades">
                               <option value="1">Aventura</option>
                               <option value="2">Impacto Social</option>
                               <option value="3">Relax y playa</option>
@@ -145,10 +148,11 @@ if (isset($_POST)) {
                                   <label class="input-group-text" for="inputGroupSelect01">Dia 1</label>
                                 </div>
                                 <select class="custom-select" name="ciudad">
+                                <option value="1">Argentina</option>
                                 </select>
                               </div>
                               <div class="descripcion">
-                                <textarea id="descripcion" class="form-control" name="mensaje-iti" placeholder="Que vas a hacer en esta ciudad?..."></textarea>
+                                <textarea id="descripcion" class="form-control" name="mensajeiti" placeholder="Que vas a hacer en esta ciudad?..."></textarea>
                               </div>
                             </div>
                           </div>

@@ -342,6 +342,7 @@ function validarviaje(){
     if ($moneda == '') {
               $errores['moneda']  = 'Por favor indica que moneda presupuestas';
       }
+      return $errores;
     }
 
    function guardarViaje($data){
